@@ -48,6 +48,7 @@
 #include <stdlib.h>
 #include "at.h"
 #include "command.h"
+#include "hw_vcom.h"
 
 /* comment the following to have help message */
 /* #define NO_HELP */
