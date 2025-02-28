@@ -95,7 +95,7 @@ static char buff[BUFSIZE];
 /* buffer write index*/
 __IO uint16_t iw=0;
 /* buffer read index*/
-static __IO uint16_t ir=0;
+static uint16_t ir=0;
 
 unsigned char uart2_rcvbuf;
 
