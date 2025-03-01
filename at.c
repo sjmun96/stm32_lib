@@ -80,3 +80,9 @@ ATEerror_t at_return_error(const char *param)
 {
   return AT_ERROR;
 }
+
+ATEerror_t at_reset(const char *param)
+{
+  NVIC_SystemReset();
+  return AT_OK;
+}
