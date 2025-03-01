@@ -91,14 +91,14 @@ static const char *const ATError_description[] =
 static const struct ATCommand_s ATCommand[] =
 {
   {
-    .string = AT_XXX,
-    .size_string = sizeof(AT_XXX) - 1,
+    .string = AT_RESET,
+    .size_string = sizeof(AT_RESET) - 1,
 #ifndef NO_HELP
-    .help_string = "AT"AT_XXX ": Do Something of the MCU\r\n",
+    .help_string = "AT"AT_RESET ": Trig a reset of the MCU\r\n",
 #endif
     .get = at_return_error,
     .set = at_return_error,
-    .run = at_return_error,
+    .run = at_reset,
   },
 };
 
@@ -225,9 +225,11 @@ static void parse_cmd(const char *cmd)
         switch (cmd[0])
         {
           case '\0':    /* nothing after the command */
+            Printf("\r\n");
             status = Current_ATCommand->run(cmd);
             break;
           case '=':
+            Printf("\r\n");
             if ((cmd[1] == '?') && (cmd[2] == '\0'))
             {
               status = Current_ATCommand->get(cmd + 1);
@@ -238,6 +240,7 @@ static void parse_cmd(const char *cmd)
             }
             break;
           case '?':
+            Printf("\r\n");
 #ifndef NO_HELP
             Printf(Current_ATCommand->help_string);
 #endif
