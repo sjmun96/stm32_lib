@@ -77,7 +77,7 @@ typedef enum eATEerror
 /* External variables --------------------------------------------------------*/
 /* Exported macros -----------------------------------------------------------*/
 /* AT Command strings. Commands start with AT */
-#define AT_XXX      "+XXX"
+#define AT_XXX      "+RESET"
 
 /* Exported functions ------------------------------------------------------- */
 /**
@@ -93,7 +93,13 @@ ATEerror_t at_return_ok(const char *param);
  * @retval AT_ERROR
  */
 ATEerror_t at_return_error(const char *param);
-  
+
+/**
+ * @brief  Trig a reset of the MCU
+ * @param  Param string of the AT command - unused
+ * @retval AT_OK
+ */
+ATEerror_t at_reset(const char *param);
 #ifdef __cplusplus
 }
 #endif
