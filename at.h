@@ -77,7 +77,7 @@ typedef enum eATEerror
 /* External variables --------------------------------------------------------*/
 /* Exported macros -----------------------------------------------------------*/
 /* AT Command strings. Commands start with AT */
-#define AT_XXX      "+RESET"
+#define AT_RESET      "+RESET"
 
 /* Exported functions ------------------------------------------------------- */
 /**
